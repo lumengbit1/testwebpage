@@ -22,7 +22,7 @@ class App extends Component {
             NodeTreeItem: null,
             modalinput:'Please enter the value of the tree node!',
             ekey:null,
-            addvisible:null,
+            addvisible:false,
 
         }
     };
@@ -125,7 +125,7 @@ class App extends Component {
             });
         };
         loop(treeData);
-        console.log(treeData)
+   //     console.log(treeData)
         this.setLeaf(treeData, curKey, level);
     }
 
@@ -221,6 +221,7 @@ class App extends Component {
         }, 2000);*/
 
         this.submitData();
+
         this.setState({
             editvisible: false,
             confirmLoading: false,
@@ -245,12 +246,8 @@ class App extends Component {
     }
 
      submitData = async()=>{
-   //      let formData = new FormData();
          let newurl= url+this.state.ekey;
 
-    //     formData.append('name',this.state.modalinput);
-
-    //     console.log(formData)
 
          let response =  await fetch(newurl,{
              method: 'PATCH',
@@ -263,13 +260,13 @@ class App extends Component {
          let res  = await response;
          if(res.ok){
             console.log('Success!')
-         }else if(res.status==='400'){
+           }else if(res.status==='400'){
             console.log('Failed!')
          }
 
     }
 
-
+/*
     showaddModal = () => {
 
         this.setState({
@@ -282,12 +279,12 @@ class App extends Component {
             // ModalText: 'The modal dialog will be closed after two seconds',
             confirmLoading: true,
         });
-        /* setTimeout(() => {
+         setTimeout(() => {
              this.setState({
                  visible: false,
                  confirmLoading: false,
              });
-         }, 2000);*/
+         }, 2000);
 
         this.submitData();
         this.setState({
@@ -336,7 +333,7 @@ class App extends Component {
             console.log('Failed!')
         }
 
-    }
+    }*/
 
 
 
@@ -353,15 +350,18 @@ class App extends Component {
           return (
           <div>
               <div onMouseLeave={this.clearMenu}>
-          <Tree ref='Itree' onSelect={this.onSelect} loadData={this.onLoadData} onMouseEnter={this.onMouseEnter}>
-              {treeNodes}
-          </Tree>
-                  {this.state.NodeTreeItem != null ? this.getNodeTreeMenu() :""}
-              </div>
-              <div>
-                  <Button type="primary" onClick={this.onEdit.bind(this)}>Edit</Button>
+                  {
+                      this.state.treeData.length
+                      ?
+                          <Tree defaultExpandAll onSelect={this.onSelect} loadData={this.onLoadData} onMouseEnter={this.onMouseEnter}>
+                              {treeNodes}
+                          </Tree>
+                      :
+                          null
+                  }
 
-              </div>
+                  {this.state.NodeTreeItem != null ? this.getNodeTreeMenu() :""}
+           </div>
               <div>
                   <Modal title="Title of the modal dialog"
                          visible={this.state.editvisible}
@@ -374,20 +374,8 @@ class App extends Component {
                       <input type='text' className='modalinput' value={this.state.modalinput} onChange={this.handleChange} onFocus={this.handleMouseEnter}/>
                   </Modal>
               </div>
-
-              <div>
-                  <Modal title="Title of the modal dialog"
-                         visible={this.state.addvisible}
-                         onOk={this.handleaddOk}
-                         confirmLoading={this.state.confirmLoading}
-                         onCancel={this.handleaddCancel}
-
-                  >
-                      <p>Please enter the new name of the tree node.</p>
-                      <input type='text' className='modalinput' value={this.state.modalinput} onChange={this.handleChange} onFocus={this.handleMouseEnter}/>
-                  </Modal>
-              </div>
           </div>
+
 
 
           );
