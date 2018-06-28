@@ -1,384 +1,130 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Tree } from 'antd';
-import { Modal, Button } from 'antd';
+import ITree from './Tree';
+import ISlide from './Slider'
+import {Grid,Row,Col} from 'react-bootstrap';
+import INav from './Nav';
+import { Layout, Menu, Breadcrumb,Button } from 'antd';
 
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
-const TreeNode = Tree.TreeNode;
-const url = "http://127.0.0.1:3000/structure/";
-const inputtext='Please enter the value of the tree node!'
+const { Header, Content, Footer } = Layout;
+
+const pagetext='Welcome Page'
 
 
 class App extends Component {
-    constructor(){
+    constructor() {
         super();
-
         this.state={
-            treeData: [],
-            treeKey:[],
-            ModalText: 'Content of the modal dialog',
-            editvisible: false,
-            NodeTreeItem: null,
-            modalinput:'Please enter the value of the tree node!',
-            ekey:null,
-            addvisible:false,
-
+            treeselect:null,
+            page:pagetext,
         }
-    };
-     async componentDidMount(){
+    }
 
-         let response = await fetch(url);
-        let lastGist = await response.json();
-        let temdata = this.state.treeData;
-      //  let alldata = this.state.allData;
-      //  console.log(lastGist.structure.level)
-
-            let i = 0;
-            for (let index of lastGist) {
-                if (index.level==="0"){
-                    temdata[i] = index;
-                }
-
-                i++;
-            }
-
-            this.setState({treeData: temdata});
-
-
-
+    handleTreeselect=(val)=>{
+        console.log(val)
+        this.setState({treeselect: val},()=>{this.changpage()});
+     //   console.log(this.state.treeselect)
 
     }
-    onSelect = (info) => {
-        //console.log('selected', info);
-        this.setState({treeKey:info});
-     //   console.log(this.state.treeKey)
-    }
-    onLoadData = async(treeNode) => {
-
-   //     let response = await fetch('./treeListData.json');
-        let response = await fetch(url);
-        let lastGist = await response.json();
-        const treeData = [...this.state.treeData];
-        const arr = [];
-        let level;
-     //   console.log(treeNode.props.eventKey)
-        for(let index of lastGist) {
-        //    let num = index.replace(/[^0-9]/ig,"");
-    //      console.log(`${lastGist.index.name}`)
-            let num = Number(index.level);
-            level = num;
-            if(num>level){
-                level = num;
-            }
-
-
-            if(treeNode.props.eventKey.length+1==index.key.length&&treeNode.props.eventKey==index.pid){
-                arr.push({name:index.name,key:index.key})
-            };
-
-
-
-       //     console.log(index)
+    changpage = ()=>{
+        if(this.state.treeselect=='001'){
+            this.setState({page:'Introduce 1'})
+        }else if(this.state.treeselect=='002'){
+            this.setState({page:<ISlide/>})
         }
-
-
-   //     console.log(arr)
-
-        this.getNewTreeData(treeData, treeNode.props.eventKey, arr, level);
-     //   console.log(treeData)
-        this.setState({treeData: treeData });
-
-
     }
-
-
-    setLeaf=(treeData, curKey, level) =>{
-        const loopLeaf = (data, lev) => {
-            const l = lev - 1;
-            data.forEach((item) => {
-                   if ((item.key.length > curKey.length) ? item.key.indexOf(curKey) !== 0 :
-                    curKey.indexOf(item.key) !== 0) {
-                    return;
-                }
-                if (item.children) {
-                    loopLeaf(item.children, l);
-                } else if (l < 1) {
-                    item.isLeaf = true;
-                }
-            });
-        };
-        loopLeaf(treeData, level + 1);
-    }
-
-    getNewTreeData=(treeData, curKey, child, level)=> {
-        const loop = (data) => {
-            if (level < 1 || curKey.length - 3 > level * 2) return;
-            data.forEach((item) => {
-                if (curKey.indexOf(item.key) === 0) {
-                    if (item.children) {
-                        loop(item.children);
-                    } else {
-                        item.children = child;
-                    }
-                }
-            });
-        };
-        loop(treeData);
-   //     console.log(treeData)
-        this.setLeaf(treeData, curKey, level);
-    }
-
-
-    onEdit(){
-         if(this.state.treeKey.length===0){
-             alert("Please Choose Treenode First!");
-             return;
-         }
-
-    }
-    onMouseEnter = (e) => {
-         if(e.node.props.eventKey==='00'){
-
-            return;
-         }
-        var x = e.event.currentTarget.offsetLeft + e.event.currentTarget.clientWidth;
-        var y = e.event.currentTarget.offsetTop ;
-        this.setState({
-            NodeTreeItem: {
-                pageX: x,
-                pageY: y,
-                id: e.node.props.eventKey,
-            },
-            ekey:e.node.props.eventKey
-        });
-    }
-    getNodeTreeMenu() {
-        const {pageX, pageY} = {...this.state.NodeTreeItem};
-        const tmpStyle = {
-            position: 'absolute',
-            maxHeight: 40,
-            textAlign: 'center',
-            left: `${pageX + 10}px`,
-            top: `${pageY}px`,
-            display: 'flex',
-            flexDirection: 'row',
-        };
-        const menu = (
-            <div
-                style={tmpStyle}
-            >
-                <div style={{alignSelf: 'center', marginLeft: 10}} >
-                    <Button type="primary" onClick={this.handleAddSub}>Edit</Button>
-                </div>
-                <div style={{alignSelf: 'center', marginLeft: 10}} >
-                    <Button type="primary" onClick={this.handleEditSub}>Add</Button>
-                </div>
-                <div style={{alignSelf: 'center', marginLeft: 10}} >
-                    <Button type="primary" onClick={this.handleDeleteSub}>Delete</Button>
-                </div>
-            </div>
-        );
-        return (this.state.NodeTreeItem == null) ? '' : menu;
-    }
-
-    handleAddSub = (e) => {
-        console.log("click add id :", this.state.NodeTreeItem.id)
-        this.showeditModal()
-    }
-
-    handleEditSub = (e) => {
-        console.log("click edit id :", this.state.NodeTreeItem.id)
-        this.showaddModal()
-    }
-
-    handleDeleteSub = (e) => {
-        console.log("click delete id :", this.state.NodeTreeItem.id)
-    }
-    clearMenu = () => {
-        this.setState({
-            NodeTreeItem: null
-        })
-    }
-
-    showeditModal = () => {
-
-        this.setState({
-            editvisible: true,
-        });
-
-    }
-    handleeditOk = () => {
-        this.setState({
-           // ModalText: 'The modal dialog will be closed after two seconds',
-            confirmLoading: true,
-        });
-       /* setTimeout(() => {
-            this.setState({
-                visible: false,
-                confirmLoading: false,
-            });
-        }, 2000);*/
-
-        this.submitData();
-
-        this.setState({
-            editvisible: false,
-            confirmLoading: false,
-            modalinput:inputtext,
-        });
-
-    }
-
-    handleeditCancel = () => {
-        console.log('Clicked cancel button');
-        this.setState({
-            editvisible: false,
-            modalinput:inputtext,
-        });
-    }
-    handleChange = (event) =>{
-        this.setState({modalinput:event.target.value})
-    }
-
-    handleMouseEnter = ()=>{
-         this.setState({modalinput:''})
-    }
-
-     submitData = async()=>{
-         let newurl= url+this.state.ekey;
-
-
-         let response =  await fetch(newurl,{
-             method: 'PATCH',
-             headers: {
-                 'Content-Type': 'application/json'
-             },
-             body: JSON.stringify({name:this.state.modalinput})
-
-         });
-         let res  = await response;
-         if(res.ok){
-            console.log('Success!')
-           }else if(res.status==='400'){
-            console.log('Failed!')
-         }
-
-    }
-
-/*
-    showaddModal = () => {
-
-        this.setState({
-            addvisible: true,
-        });
-
-    }
-    handleaddOk = () => {
-        this.setState({
-            // ModalText: 'The modal dialog will be closed after two seconds',
-            confirmLoading: true,
-        });
-         setTimeout(() => {
-             this.setState({
-                 visible: false,
-                 confirmLoading: false,
-             });
-         }, 2000);
-
-        this.submitData();
-        this.setState({
-            addvisible: false,
-            confirmLoading: false,
-            modalinput:inputtext,
-        });
-
-    }
-
-    handleeditCancel = () => {
-        console.log('Clicked cancel button');
-        this.setState({
-            addvisible: false,
-            modalinput:inputtext,
-        });
-    }
-    handleChange = (event) =>{
-        this.setState({modalinput:event.target.value})
-    }
-
-    handleMouseEnter = ()=>{
-        this.setState({modalinput:''})
-    }
-
-    submitData = async()=>{
-        //      let formData = new FormData();
-        let newurl= url+this.state.ekey;
-
-        //     formData.append('name',this.state.modalinput);
-
-        //     console.log(formData)
-
-        let response =  await fetch(newurl,{
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({name:this.state.modalinput})
-
-        });
-        let res  = await response;
-        if(res.ok){
-            console.log('Success!')
-        }else if(res.status==='400'){
-            console.log('Failed!')
-        }
-
-    }*/
-
-
 
   render() {
 
-          const loop = data => data.map((item) => {
-          if (item.children) {
-          return <TreeNode title={item.name} key={item.key}>{loop(item.children)}</TreeNode>;
-      }
-          return <TreeNode title={item.name} key={item.key} isLeaf={item.isLeaf} disabled={item.key === '0-0-0'} />;
-      });
-          const treeNodes = loop(this.state.treeData);
-
           return (
-          <div>
-              <div onMouseLeave={this.clearMenu}>
-                  {
-                      this.state.treeData.length
-                      ?
-                          <Tree defaultExpandAll onSelect={this.onSelect} loadData={this.onLoadData} onMouseEnter={this.onMouseEnter}>
-                              {treeNodes}
-                          </Tree>
-                      :
-                          null
-                  }
+              <div >
+                  {/*<Grid fluid={true}>*/}
+                      {/*<Row className="head"><p>head</p></Row>*/}
+                      {/*<Row className="nav"><INav /></Row>*/}
+                      {/*<Row className="show-grid">*/}
+                        {/*<Col className='treecol' md={4} >*/}
+                         {/*<ITree/>*/}
+                        {/*</Col>*/}
+                        {/*<Col className='centre' md={6}>*/}
+                            {/*<ISlide/>*/}
+                        {/*</Col>*/}
+                          {/*<Col className='right' md={2}>*/}
+                              {/*<p>right</p>*/}
+                          {/*</Col>*/}
+                      {/*</Row>*/}
+                      {/*<Row className="foot"><p>foot</p></Row>*/}
+                  {/*</Grid>*/}
+                  <div><img className='banner' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530204432503&di=0bfe2ca6f21aa2cba551afd3580a2b24&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fc995d143ad4bd1137c1d50b556afa40f4afb0560.jpg'/></div>
+                  <Layout  className="layout">
+                      <Header >
 
-                  {this.state.NodeTreeItem != null ? this.getNodeTreeMenu() :""}
-           </div>
-              <div>
-                  <Modal title="Title of the modal dialog"
-                         visible={this.state.editvisible}
-                         onOk={this.handleeditOk}
-                         confirmLoading={this.state.confirmLoading}
-                         onCancel={this.handleeditCancel}
+                          <div  className="logo" >LOGO</div>
+                          <Menu
+                              theme="dark"
+                              mode="horizontal"
+                              //defaultSelectedKeys={['2']}
+                              style={{ lineHeight: '64px' }}
+                          >
+                              <Menu.Item key="1">About us</Menu.Item>
+                              <Menu.Item key="2">Organization</Menu.Item>
+                              <SubMenu title={<span>Services</span>}>
+                                  <MenuItemGroup title="Softwware" >
+                                      <Menu.Item key="setting:1">Service 1</Menu.Item>
+                                      <Menu.Item key="setting:2">Service 2</Menu.Item>
+                                  </MenuItemGroup>
+                                  <MenuItemGroup title="Hardware">
+                                      <Menu.Item key="setting:3">Service 3</Menu.Item>
+                                      <Menu.Item key="setting:4">Service 4</Menu.Item>
+                                  </MenuItemGroup>
+                              </SubMenu>
+                              <Menu.Item key="3">Contact us</Menu.Item>
+                          </Menu>
+                      </Header>
+                      <Content style={{ padding: '0 50px' }}>
+                          {/*<Breadcrumb style={{ margin: '12px 0' }}>*/}
+                              {/*<Breadcrumb.Item>Home</Breadcrumb.Item>*/}
+                              {/*<Breadcrumb.Item>List</Breadcrumb.Item>*/}
+                              {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
+                          {/*</Breadcrumb>*/}
+                          <div>
+                              <Row className="content">
+                                  <Col className='treecol' md={2} >
+                                      <ITree handleTreeselect={this.handleTreeselect}/>
+                                  </Col>
+                                  <Col className='centre' md={8}>
+                                      {this.state.page}
+                                  </Col>
+                                  <Col className='right' md={2}>
+                                      <br/>
+                                      <div>
+                                      <label htmlFor='username' style={{width:80}}>User:</label>
+                                      <input id='username' type='text' placeholder='username'  />
+                                      </div>
+                                      <div>
+                                      <label htmlFor='password' style={{width:80}}>Password:</label>
+                                      <input id='password' type='text' placeholder='password'/>
+                                      </div>
+                                      <br/>
+                                      <div align="center">
+                                          <Button>Login</Button>
+                                      </div>
 
-                  >
-                      <p>Please enter the new name of the tree node.</p>
-                      <input type='text' className='modalinput' value={this.state.modalinput} onChange={this.handleChange} onFocus={this.handleMouseEnter}/>
-                  </Modal>
+                                  </Col>
+                              </Row>
+                          </div>
+                      </Content>
+                      <Footer  style={{ textAlign: 'center' }}>
+                          <div className='foot'>2018 Created by Meng Lu</div>
+
+                      </Footer>
+                  </Layout>
               </div>
-          </div>
 
-
-
-          );
+          )
 
 
   }

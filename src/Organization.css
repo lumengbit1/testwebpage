@@ -1,0 +1,32 @@
+.body{
+    min-height: 100vh;
+
+}
+.treecol{
+    border-style: ridge;
+    height: 70vh;
+}
+.foot{
+    position:absolute;
+    bottom: 0;
+    height: 10vh;
+    border-style: ridge;
+    width:100%;
+}
+.head{
+
+    height: 10vh;
+    border-style: ridge;
+
+}
+.nav{
+    border-style: ridge;
+    background-color: black;
+}
+
+.centre {
+    border-style: ridge;
+}
+.right {
+    border-style: ridge;
+}
