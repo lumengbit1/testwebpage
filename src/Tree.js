@@ -3,6 +3,10 @@ import './Tree.css';
 import { Tree } from 'antd';
 import { Modal, Button,Icon,Tooltip } from 'antd';
 
+import 'babel-polyfill';
+require('es6-promise').polyfill();
+
+
 const TreeNode = Tree.TreeNode;
 const url = "http://127.0.0.1:3000/structure/";
 const inputtext='Please enter the value of the tree node!'

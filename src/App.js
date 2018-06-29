@@ -21,6 +21,9 @@ class App extends Component {
         this.state={
             treeselect:null,
             page:pagetext,
+            buttontext:'Login',
+            logtext:'username',
+            logpassword:'password',
         }
     }
 
@@ -37,6 +40,29 @@ class App extends Component {
             this.setState({page:<ISlide/>})
         }
     }
+    handleClick=()=>{
+        if(this.state.logtext=='username'||this.state.logpassword=='password'){
+            alert('Please enter Username and Password!');
+            return;
+        }
+        if(this.state.buttontext=='Login'){
+            this.setState({buttontext:'Logout'});
+            this.refs.login.style.display='none';
+            this.refs.logout.style.display='block';
+        }else{
+            this.setState({buttontext:'Login'});
+            this.refs.login.style.display='block';
+            this.refs.logout.style.display='none';
+        }
+    }
+    handleChangeuser=(e)=>{
+        this.setState({logtext:e.target.value})
+    }
+
+    handleChangepassword=(e)=>{
+        this.setState({logpassword:e.target.value})
+    }
+
 
   render() {
 
@@ -100,17 +126,23 @@ class App extends Component {
                                   </Col>
                                   <Col className='right' md={2}>
                                       <br/>
-                                      <div>
-                                      <label htmlFor='username' style={{width:80}}>User:</label>
-                                      <input id='username' type='text' placeholder='username'  />
+                                      <div ref='login'>
+                                          <div>
+                                              <label htmlFor='username' style={{width:80}}>User:</label>
+                                              <input id='username'  placeholder={this.state.logtext} onChange={this.handleChangeuser} />
+                                          </div>
+                                          <div>
+                                              <label htmlFor='password' style={{width:80}}>Password:</label>
+                                              <input type='password' id='password'  placeholder={this.state.logpassword} onChange={this.handleChangepassword} />
+                                          </div>
                                       </div>
-                                      <div>
-                                      <label htmlFor='password' style={{width:80}}>Password:</label>
-                                      <input id='password' type='text' placeholder='password'/>
+                                      <div ref='logout' style={{display:'none'}}>
+                                        <h4> Welcome,{this.state.logtext}</h4>
                                       </div>
                                       <br/>
                                       <div align="center">
-                                          <Button>Login</Button>
+                                          {/*<Button >Login</Button>*/}
+                                          <input type="button" id="btn1" value={this.state.buttontext} onClick={this.handleClick}/>
                                       </div>
 
                                   </Col>
