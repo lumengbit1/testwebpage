@@ -4,42 +4,42 @@
       "id":"00",
       "level":"0",
       "key": "00",
-      "name": "组织结构",
+      "name": "Company",
       "pid": "-1"
     },
     {
       "id":"001",
       "level":"1",
       "key": "001",
-      "name": "综合指标",
+      "name": "Human Resources",
       "pid": "00"
     },
     {
       "id":"002",
       "level":"1",
       "key": "002",
-      "name": "分析类指标",
+      "name": "Software Department",
       "pid": "00"
     },
     {
       "id":"003",
       "level":"1",
       "key": "003",
-      "name": "组合指标",
+      "name": "Hardware Department",
       "pid": "00"
     },
     {
       "id":"004",
       "level":"1",
       "key": "004",
-      "name": "移动业务计费收入",
+      "name": "Networking Department",
       "pid": "00"
     },
     {
       "id":"005",
       "level":"1",
       "key": "005",
-      "name": "2G业务",
+      "name": "IT Support Department",
       "pid": "00"
     },
 
@@ -48,34 +48,34 @@
     "id":"0011",
     "level":"2",
     "key": "0011",
-    "name": "综合指标1",
+    "name": "HR Group 1",
     "pid": "001"
   },
   {
     "id":"0021",
     "level":"2",
     "key": "0021",
-    "name": "分析类指标1",
+    "name": "Soft Group 1",
     "pid": "002"
   },
   {
     "id":"0031",
     "level":"2",
     "key": "0031",
-    "name": "组合指标1",
+    "name": "Hard Group 1",
     "pid": "003"
   },
   {
     "id":"0041",
     "level":"2",
     "key": "0041",
-    "name": "移动业务计费收入1",
+    "name": "Net Group 1",
     "pid": "004"},
   {
     "id":"0051",
     "level":"2",
     "key": "0051",
-    "name": "2G业务1",
+    "name": "IT Group 1",
     "pid": "005"
   },
 
@@ -83,31 +83,31 @@
       "id":"00111",
       "level":"3",
       "key":"00111",
-      "name":"综合指标000",
+      "name":"Tom",
       "pid":"0011"},
     {
       "id":"00211",
       "level":"3",
       "key":"00211",
-      "name":"分析类指标000",
+      "name":"Elsa",
       "pid":"0021"},
     {
       "id":"00311",
       "level":"3",
       "key":"00311",
-      "name":"组合指标000",
+      "name":"Oliver",
       "pid":"0031"},
     {
       "id":"00411",
       "level":"3",
       "key":"00411",
-      "name":"移动业务计费收入000",
+      "name":"Ryan",
       "pid":"0041"},
     {
       "id":"00511",
       "level":"3",
       "key":"00511",
-      "name":"2G业务000",
+      "name":"Jerry",
       "pid":"0051"}
     ]
 }
