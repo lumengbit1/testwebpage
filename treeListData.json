@@ -1,19 +1,113 @@
-{
-  "posts": [
+﻿{
+  "structure":[
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id":"00",
+      "level":"0",
+      "key": "00",
+      "name": "Company",
+      "pid": "-1"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+      "id":"001",
+      "level":"1",
+      "key": "001",
+      "name": "Human Resources",
+      "pid": "00"
+    },
+    {
+      "id":"002",
+      "level":"1",
+      "key": "002",
+      "name": "Software Department",
+      "pid": "00"
+    },
+    {
+      "id":"003",
+      "level":"1",
+      "key": "003",
+      "name": "Hardware Department",
+      "pid": "00"
+    },
+    {
+      "id":"004",
+      "level":"1",
+      "key": "004",
+      "name": "Networking Department",
+      "pid": "00"
+    },
+    {
+      "id":"005",
+      "level":"1",
+      "key": "005",
+      "name": "IT Support Department",
+      "pid": "00"
+    },
+
+
+  {
+    "id":"0011",
+    "level":"2",
+    "key": "0011",
+    "name": "HR Group 1",
+    "pid": "001"
+  },
+  {
+    "id":"0021",
+    "level":"2",
+    "key": "0021",
+    "name": "Soft Group 1",
+    "pid": "002"
+  },
+  {
+    "id":"0031",
+    "level":"2",
+    "key": "0031",
+    "name": "Hard Group 1",
+    "pid": "003"
+  },
+  {
+    "id":"0041",
+    "level":"2",
+    "key": "0041",
+    "name": "Net Group 1",
+    "pid": "004"},
+  {
+    "id":"0051",
+    "level":"2",
+    "key": "0051",
+    "name": "IT Group 1",
+    "pid": "005"
+  },
+
+    {
+      "id":"00111",
+      "level":"3",
+      "key":"00111",
+      "name":"Tom",
+      "pid":"0011"},
+    {
+      "id":"00211",
+      "level":"3",
+      "key":"00211",
+      "name":"Elsa",
+      "pid":"0021"},
+    {
+      "id":"00311",
+      "level":"3",
+      "key":"00311",
+      "name":"Oliver",
+      "pid":"0031"},
+    {
+      "id":"00411",
+      "level":"3",
+      "key":"00411",
+      "name":"Ryan",
+      "pid":"0041"},
+    {
+      "id":"00511",
+      "level":"3",
+      "key":"00511",
+      "name":"Jerry",
+      "pid":"0051"}
+    ]
 }
