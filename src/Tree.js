@@ -81,7 +81,7 @@ class ITree extends Component {
             }
 
 
-            if(treeNode.props.eventKey.length+1==index.key.length&&treeNode.props.eventKey==index.pid){
+            if(treeNode.props.eventKey.length+1===index.key.length&&treeNode.props.eventKey===index.pid){
                 arr.push({name:index.name,key:index.key})
             };
 
@@ -315,7 +315,7 @@ class ITree extends Component {
         let slicekey=key.slice(0,this.state.ekey.length);
         console.log('tempmaxkey:'+tempmaxkey);
         for(let index of alldata){
-            if(index.key.length==keylong&&index.pid==key){
+            if(index.key.length===keylong&&index.pid===key){
                 if((index.key>tempmaxkey)){
                     num++;
                 }
@@ -350,14 +350,14 @@ class ITree extends Component {
 
 
     deleteData = async()=>{
-        let newurl= url;
+      //  let newurl= url;
         let alldata=this.state.alldata;
         //    console.log('ekey:'+this.state.ekey)
         let delarr=[];
         let key = this.state.ekey;
         for(let index of alldata){
             if(index.key.length>=key.length){
-                if(index.key.slice(0,key.length)==key){
+                if(index.key.slice(0,key.length)===key){
                     delarr.push(url+index.id)
                 }
             }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import ITree from './Tree';
 import ISlide from './Slider'
-import {Grid,Row,Col} from 'react-bootstrap';
-import INav from './Nav';
-import { Layout, Menu, Breadcrumb,Button } from 'antd';
+import {Row,Col} from 'react-bootstrap';
+import { Layout, Menu} from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -34,23 +33,24 @@ class App extends Component {
 
     }
     changpage = ()=>{
-        if(this.state.treeselect=='001'){
+        if(this.state.treeselect==='001'){
             this.setState({page:'Introduce 1'})
-        }else if(this.state.treeselect=='002'){
+        }else if(this.state.treeselect==='002'){
             this.setState({page:<ISlide/>})
         }
     }
     handleClick=()=>{
-        if(this.state.logtext=='username'||this.state.logpassword=='password'){
+        if(this.state.logtext==='username'||this.state.logpassword==='password'){
             alert('Please enter Username and Password!');
             return;
         }
-        if(this.state.buttontext=='Login'){
+        if(this.state.buttontext==='Login'){
             this.setState({buttontext:'Logout'});
             this.refs.login.style.display='none';
             this.refs.logout.style.display='block';
         }else{
             this.setState({buttontext:'Login'});
+            this.refs.login.forceUpdate;
             this.refs.login.style.display='block';
             this.refs.logout.style.display='none';
         }
@@ -68,23 +68,7 @@ class App extends Component {
 
           return (
               <div >
-                  {/*<Grid fluid={true}>*/}
-                      {/*<Row className="head"><p>head</p></Row>*/}
-                      {/*<Row className="nav"><INav /></Row>*/}
-                      {/*<Row className="show-grid">*/}
-                        {/*<Col className='treecol' md={4} >*/}
-                         {/*<ITree/>*/}
-                        {/*</Col>*/}
-                        {/*<Col className='centre' md={6}>*/}
-                            {/*<ISlide/>*/}
-                        {/*</Col>*/}
-                          {/*<Col className='right' md={2}>*/}
-                              {/*<p>right</p>*/}
-                          {/*</Col>*/}
-                      {/*</Row>*/}
-                      {/*<Row className="foot"><p>foot</p></Row>*/}
-                  {/*</Grid>*/}
-                  <div><img className='banner' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530204432503&di=0bfe2ca6f21aa2cba551afd3580a2b24&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fc995d143ad4bd1137c1d50b556afa40f4afb0560.jpg'/></div>
+                  <div><img alt='banner' className='banner' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530204432503&di=0bfe2ca6f21aa2cba551afd3580a2b24&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fc995d143ad4bd1137c1d50b556afa40f4afb0560.jpg'/></div>
                   <Layout  className="layout">
                       <Header >
 
