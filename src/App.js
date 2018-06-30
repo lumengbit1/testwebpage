@@ -4,7 +4,7 @@ import './App.css';
 import ITree from './Tree';
 import ISlide from './Slider'
 import {Row,Col} from 'react-bootstrap';
-import { Layout, Menu} from 'antd';
+import { Layout, Menu,Input,Icon} from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -21,8 +21,8 @@ class App extends Component {
             treeselect:null,
             page:pagetext,
             buttontext:'Login',
-            logtext:'username',
-            logpassword:'password',
+            logtext:'',
+            logpassword:'',
         }
     }
 
@@ -49,22 +49,37 @@ class App extends Component {
             this.refs.login.style.display='none';
             this.refs.logout.style.display='block';
         }else{
-            this.setState({buttontext:'Login'});
-            this.refs.login.forceUpdate;
+            this.setState({buttontext:'Login',logtext:'',logpassword:''});
             this.refs.login.style.display='block';
             this.refs.logout.style.display='none';
         }
-    }
-    handleChangeuser=(e)=>{
-        this.setState({logtext:e.target.value})
     }
 
     handleChangepassword=(e)=>{
         this.setState({logpassword:e.target.value})
     }
 
+    emitEmpty = () => {
+        this.userNameInput.focus();
+        this.setState({ logtext: '' });
+    }
+    onChangeUserName = (e) => {
+        this.setState({logtext:e.target.value})
+    }
+    passEmpty = () => {
+        this.passWordInput.focus();
+        this.setState({ logpassword: '' });
+    }
+    onChangePassword = (e) => {
+        this.setState({logpassword:e.target.value})
+    }
+
 
   render() {
+
+          const { logtext,logpassword } = this.state;
+          const suffixuser = logtext ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
+          const suffixpassword = logpassword ? <Icon type="close-circle" onClick={this.passEmpty} /> : null;
 
           return (
               <div >
@@ -112,12 +127,29 @@ class App extends Component {
                                       <br/>
                                       <div ref='login'>
                                           <div>
-                                              <label htmlFor='username' style={{width:80}}>User:</label>
-                                              <input id='username'  placeholder={this.state.logtext} onChange={this.handleChangeuser} />
+                                              <Input
+                                                  ref='user'
+                                                  placeholder="Enter your username"
+                                                  prefix={<Icon type="user" />}
+                                                  suffix={suffixuser}
+                                                  value={logtext}
+                                                  onChange={this.onChangeUserName}
+                                                  ref={node => this.userNameInput = node}
+                                                  onPressEnter={this.handleClick}
+                                              />
                                           </div>
                                           <div>
-                                              <label htmlFor='password' style={{width:80}}>Password:</label>
-                                              <input type='password' id='password'  placeholder={this.state.logpassword} onChange={this.handleChangepassword} />
+                                              {/*<label htmlFor='password' style={{width:80}}>Password:</label>*/}
+                                              {/*<input type='password' id='password'  placeholder={this.state.logpassword} onChange={this.handleChangepassword} />*/}
+                                              <Input
+                                                  placeholder="Enter your password"
+                                                  prefix={<Icon type="lock" />}
+                                                  suffix={suffixpassword}
+                                                  value={logpassword}
+                                                  onChange={this.onChangePassword}
+                                                  ref={node => this.passWordInput = node}
+                                                  onPressEnter={this.handleClick}
+                                              />
                                           </div>
                                       </div>
                                       <div ref='logout' style={{display:'none'}}>

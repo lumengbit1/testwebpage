@@ -19,6 +19,8 @@
 }
 .right {
   background-color: bisque;
+  width: 100%;
+  overflow: hidden;
 
 }
 
@@ -57,4 +59,15 @@
   line-height: 10vh;
 }
 
-
+.anticon-close-circle {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+  font-size: 12px;
+}
+.anticon-close-circle:hover {
+  color: #999;
+}
+.anticon-close-circle:active {
+  color: #666;
+}
