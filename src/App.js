@@ -33,9 +33,9 @@ class App extends Component {
 
     }
     changpage = ()=>{
-        if(this.state.treeselect==='001'){
+        if(this.state.treeselect=='001'){
             this.setState({page:'Introduce 1'})
-        }else if(this.state.treeselect==='002'){
+        }else if(this.state.treeselect=='002'){
             this.setState({page:<ISlide/>})
         }
     }

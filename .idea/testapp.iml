@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
+  <component name="CompassSettings">
+    <option name="compassConfigPath" value="$MODULE_DIR$/compass/myproject/config.rb" />
+    <option name="compassExecutableFilePath" value="D:\Ruby25-x64\bin\compass" />
+    <option name="compassSupportEnabled" value="true" />
+  </component>
   <component name="NewModuleRootManager">
+    <content url="file://D:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets" />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
