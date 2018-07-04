@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fc1cfe4-54bb-4460-8a27-cf766aebf38b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/testapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testapp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,20 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" lean-forward="true" selection-end-line="188" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizationPage.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/OrganizationPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+            <state relative-caret-position="297">
+              <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -40,9 +31,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sasstest/config.rb">
+      <file leaf-file-name="Aboutus.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Aboutus.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="320" selection-start-line="9" selection-start-column="320" selection-end-line="9" selection-end-column="320" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HomePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrganizationPage.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OrganizationPage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.test.js">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="OrganizationPage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OrganizationPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="screen.scss" pinned="false" current-in-tab="false">
@@ -54,49 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sasstest/stylesheets/screen.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1372" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="print.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sasstest/stylesheets/print.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="58" column="13" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="81">
-                <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tree.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8991">
-              <caret line="338" column="21" selection-start-line="338" selection-start-column="21" selection-end-line="338" selection-end-column="21" />
+            <state relative-caret-position="545">
+              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -115,12 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>handleCancel</find>
-      <find>treeData</find>
-      <find>children</find>
-      <find>modalinput</find>
-      <find>length</find>
-      <find>hasChild</find>
       <find>ekey</find>
       <find>tempmaxkey</find>
       <find>getNodeTreeMenu</find>
@@ -143,8 +147,14 @@
       <find>passEmpty</find>
       <find>suffixpassword</find>
       <find>slide</find>
-      <find>page</find>
       <find>App</find>
+      <find>handleChangepassword</find>
+      <find>anticon-close-circle</find>
+      <find>centre</find>
+      <find>classname</find>
+      <find>page</find>
+      <find>reloadPage</find>
+      <find>content</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,13 +184,16 @@
         <option value="$PROJECT_DIR$/src/Tree.css" />
         <option value="$PROJECT_DIR$/config/polyfills.js" />
         <option value="$PROJECT_DIR$/src/Slider.js" />
-        <option value="$PROJECT_DIR$/src/Tree.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/compass/myproject/sass/screen.scss" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/sasstest/sass/screen.scss" />
-        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/OrganizationPage.css" />
         <option value="$PROJECT_DIR$/src/OrganizationPage.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/Tree.js" />
+        <option value="$PROJECT_DIR$/src/HomePage.js" />
+        <option value="$PROJECT_DIR$/src/Aboutus.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -336,7 +349,7 @@
       <workItem from="1530539753437" duration="648000" />
       <workItem from="1530667570580" duration="630000" />
       <workItem from="1530668275512" duration="316000" />
-      <workItem from="1530668613486" duration="2683000" />
+      <workItem from="1530668613486" duration="12368000" />
     </task>
     <task id="LOCAL-00001" summary="29/06/2018&#10;almost finish">
       <created>1530197079864</created>
@@ -415,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530367441893</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add BackTop component">
+      <created>1530671687537</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1530671687537</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220570000" />
+    <option name="totallyTimeSpent" value="230255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -482,7 +502,8 @@
     <MESSAGE value="29/06/2018&#10;compatible" />
     <MESSAGE value="29/06/2018&#10; fix warning" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="add BackTop component" />
+    <option name="LAST_COMMIT_MESSAGE" value="add BackTop component" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -490,19 +511,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ztree-for-react/lib/ztree-for-react.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ztree-for-react/src/App.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ztree-for-react/src/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -635,16 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Slider.css" />
     <entry file="file://$PROJECT_DIR$/config/polyfills.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -689,13 +687,6 @@
       </provider>
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8991">
-          <caret line="338" column="21" selection-start-line="338" selection-start-column="21" selection-end-line="338" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compass/myproject/sass/print.scss" />
     <entry file="file://$PROJECT_DIR$/compass/myproject/sass/screen.scss" />
     <entry file="file://$PROJECT_DIR$/compass/myproject/stylesheets/screen.css" />
@@ -705,13 +696,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sasstest/stylesheets/print.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sasstest/stylesheets/screen.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -725,17 +709,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/OrganizationPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" lean-forward="true" selection-end-line="188" />
+        <state relative-caret-position="621">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OrganizationPage.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Aboutus.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+          <caret line="9" column="320" selection-start-line="9" selection-start-column="320" selection-end-line="9" selection-end-column="320" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="83" column="32" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

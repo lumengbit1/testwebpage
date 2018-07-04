@@ -1,0 +1,24 @@
+
+.treecol{
+
+    background-color: aliceblue;
+    /*height: 70vh;*/
+
+}
+
+.centre {
+    background-color: azure;
+    color: black;
+
+}
+.right {
+    background-color: bisque;
+    width: 100%;
+    overflow: hidden;
+
+}
+.content{
+    border-style: groove;
+    height: 70vh;
+
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Tree.css';
-import { Tree } from 'antd';
+import { Tree} from 'antd';
 import { Modal, Button,Icon,Tooltip } from 'antd';
 
 import 'babel-polyfill';
@@ -383,6 +383,7 @@ class ITree extends Component {
 
     reloadPage=()=>{
         window.location.reload();
+        //return <ITree/>
 
     }
 
@@ -435,7 +436,6 @@ class ITree extends Component {
                         <p>Are you sure you want to delete this node and its children?</p>
                     </Modal>
                 </div>
-
             </div>
 
 

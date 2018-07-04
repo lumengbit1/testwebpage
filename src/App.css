@@ -37,6 +37,9 @@
   line-height: 31px;
   text-align: center;
 }
+.logo:hover{
+  cursor: pointer;
+}
 
 .content{
   border-style: groove;
