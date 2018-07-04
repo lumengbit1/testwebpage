@@ -4,7 +4,7 @@ import './App.css';
 import ITree from './Tree';
 import ISlide from './Slider'
 import {Row,Col} from 'react-bootstrap';
-import { Layout, Menu,Input,Icon} from 'antd';
+import { Layout, Menu,Input,Icon, BackTop} from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -170,6 +170,13 @@ class App extends Component {
 
                       </Footer>
                   </Layout>
+
+                  <div>
+                      <BackTop />
+                      Scroll down to see the bottom-right
+                      <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}> gray </strong>
+                      button.
+                  </div>
               </div>
 
           )
