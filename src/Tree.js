@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './Tree.css';
-import { Tree} from 'antd';
-import { Modal, Button,Icon,Tooltip } from 'antd';
+import {Tree, Modal, Button,Icon,Tooltip } from 'antd';
 
-import 'babel-polyfill';
-require('es6-promise').polyfill();
+
+
 
 
 const TreeNode = Tree.TreeNode;

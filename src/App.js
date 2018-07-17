@@ -9,6 +9,9 @@ import { Layout, Menu,Input,Icon, BackTop} from 'antd';
 import IOrganizationPage from './OrganizationPage';
 import IHomePage from './HomePage';
 import IAboutUs from './Aboutus';
+import IStep from './Step';
+
+import {Route,NavLink,Switch} from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -27,7 +30,6 @@ class App extends Component {
             buttontext:'Login',
             logtext:'',
             logpassword:'',
-            current:null,
         }
     }
 
@@ -78,30 +80,6 @@ class App extends Component {
     onChangePassword = (e) => {
         this.setState({logpassword:e.target.value})
     }
-    navSwitchpage =()=>{
-        switch(this.state.current){
-            case '1':
-                return <IAboutUs/>
-                break;
-            case '2':
-                return <IOrganizationPage/>
-                break;
-            default:
-                //return <img alt='home' style={{width:'100%'}} src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530698413239&di=a57edb1642269900e0d8517e527b5dc3&imgtype=0&src=http%3A%2F%2Fwww.wallcoo.com%2Fnature%2FApple_OSX_Mountain_Lion_Secret_Wallpapers%2Fwallpapers%2F3200x2000%2FCosmos02.jpg'/>
-                return <IHomePage/>
-                break;
-        }
-    }
-    handleNavclick=(e)=>{
-        console.log('click ', e);
-        this.setState({
-            current: e.key,
-        });
-    }
-    handleLogoclick=()=>{
-        //return <img alt='home' style={{width:'100%'}} src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530698413239&di=a57edb1642269900e0d8517e527b5dc3&imgtype=0&src=http%3A%2F%2Fwww.wallcoo.com%2Fnature%2FApple_OSX_Mountain_Lion_Secret_Wallpapers%2Fwallpapers%2F3200x2000%2FCosmos02.jpg'/>
-         this.setState({current:null})
-    }
 
 
   render() {
@@ -116,20 +94,21 @@ class App extends Component {
                   <Layout  className="layout">
                       <Header >
 
-                          <div className="logo" ><img onClick={this.handleLogoclick} alt='LOGO'/></div>
+                          {/*<div ><img className="logo"  onClick={this.handleLogoclick} alt='LOGO' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531126100748&di=a238e78ae2eef8e2b9b06e703d68d20e&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20141120%2F20141120123529_193.jpg'/></div>*/}
+                          <div ><NavLink exact to='/'><img className="logo"  alt='LOGO' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531126100748&di=a238e78ae2eef8e2b9b06e703d68d20e&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20141120%2F20141120123529_193.jpg'/></NavLink></div>
                           <Menu
                               theme="dark"
                               mode="horizontal"
                               //defaultSelectedKeys={['2']}
                               style={{ lineHeight: '64px' }}
-                              onClick={this.handleNavclick}
+                              // onClick={this.handleNavclick}
                               selectedKeys={[this.state.current]}
                           >
-                              <Menu.Item key="1">About us</Menu.Item>
-                              <Menu.Item key="2">Organization</Menu.Item>
+                              <Menu.Item key="1"><NavLink exact to='/aboutus'>About us</NavLink></Menu.Item>
+                              <Menu.Item key="2"><NavLink exact to='/organization'>Organization</NavLink></Menu.Item>
                               <SubMenu title={<span>Services</span>}>
                                   <MenuItemGroup title="Softwware" >
-                                      <Menu.Item key="setting:1">Service 1</Menu.Item>
+                                      <Menu.Item key="setting:1"><NavLink exact to='/step'>Service 1</NavLink></Menu.Item>
                                       <Menu.Item key="setting:2">Service 2</Menu.Item>
                                   </MenuItemGroup>
                                   <MenuItemGroup title="Hardware">
@@ -141,66 +120,16 @@ class App extends Component {
                           </Menu>
                       </Header>
                       <Content style={{ padding: '0 50px'}}>
-                          {/*<Breadcrumb style={{ margin: '12px 0' }}>*/}
-                              {/*<Breadcrumb.Item>Home</Breadcrumb.Item>*/}
-                              {/*<Breadcrumb.Item>List</Breadcrumb.Item>*/}
-                              {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
-                          {/*</Breadcrumb>*/}
-                          {/*<IOrganizationPage/>*/}
-                          {/*<IHomePage/>*/}
-                          {this.navSwitchpage()}
+                            <Switch>
+                                <Route exact path='/' component={IHomePage}/>
+                                <Route exact path='/organization' component={IOrganizationPage}/>
+                                <Route exact path='/aboutus' component={IAboutUs}/>
+                                <Route exact path='/step' component={IStep}/>
+                            </Switch>
 
 
 
-                          {/*<div>*/}
-                              {/*<Row className="content">*/}
-                                  {/*<Col className='treecol' md={2} >*/}
-                                      {/*<ITree handleTreeselect={this.handleTreeselect}/>*/}
-                                  {/*</Col>*/}
-                                  {/*<Col className='centre' md={8}>*/}
-                                      {/*{this.state.page}*/}
-                                  {/*</Col>*/}
-                                  {/*<Col className='right' md={2}>*/}
-                                      {/*<br/>*/}
-                                      {/*<div ref='login'>*/}
-                                          {/*<div>*/}
-                                              {/*<Input*/}
-                                                  {/*ref='user'*/}
-                                                  {/*placeholder="Enter your username"*/}
-                                                  {/*prefix={<Icon type="user" />}*/}
-                                                  {/*suffix={suffixuser}*/}
-                                                  {/*value={logtext}*/}
-                                                  {/*onChange={this.onChangeUserName}*/}
-                                                  {/*ref={node => this.userNameInput = node}*/}
-                                                  {/*onPressEnter={this.handleClick}*/}
-                                              {/*/>*/}
-                                          {/*</div>*/}
-                                          {/*<div>*/}
-                                              {/*/!*<label htmlFor='password' style={{width:80}}>Password:</label>*!/*/}
-                                              {/*/!*<input type='password' id='password'  placeholder={this.state.logpassword} onChange={this.handleChangepassword} />*!/*/}
-                                              {/*<Input*/}
-                                                  {/*placeholder="Enter your password"*/}
-                                                  {/*prefix={<Icon type="lock" />}*/}
-                                                  {/*suffix={suffixpassword}*/}
-                                                  {/*value={logpassword}*/}
-                                                  {/*onChange={this.onChangePassword}*/}
-                                                  {/*ref={node => this.passWordInput = node}*/}
-                                                  {/*onPressEnter={this.handleClick}*/}
-                                              {/*/>*/}
-                                          {/*</div>*/}
-                                      {/*</div>*/}
-                                      {/*<div ref='logout' style={{display:'none'}}>*/}
-                                        {/*<h4> Welcome,{this.state.logtext}</h4>*/}
-                                      {/*</div>*/}
-                                      {/*<br/>*/}
-                                      {/*<div align="center">*/}
-                                          {/*/!*<Button >Login</Button>*!/*/}
-                                          {/*<input type="button" id="btn1" value={this.state.buttontext} onClick={this.handleClick}/>*/}
-                                      {/*</div>*/}
 
-                                  {/*</Col>*/}
-                              {/*</Row>*/}
-                          {/*</div>*/}
                       </Content>
                       <Footer  style={{ textAlign: 'center' }}>
                           <div className='foot'>2018 Created by Meng Lu</div>
