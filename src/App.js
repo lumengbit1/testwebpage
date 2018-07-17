@@ -94,14 +94,12 @@ class App extends Component {
                   <Layout  className="layout">
                       <Header >
 
-                          {/*<div ><img className="logo"  onClick={this.handleLogoclick} alt='LOGO' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531126100748&di=a238e78ae2eef8e2b9b06e703d68d20e&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20141120%2F20141120123529_193.jpg'/></div>*/}
                           <div ><NavLink exact to='/'><img className="logo"  alt='LOGO' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531126100748&di=a238e78ae2eef8e2b9b06e703d68d20e&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20141120%2F20141120123529_193.jpg'/></NavLink></div>
                           <Menu
                               theme="dark"
                               mode="horizontal"
                               //defaultSelectedKeys={['2']}
                               style={{ lineHeight: '64px' }}
-                              // onClick={this.handleNavclick}
                               selectedKeys={[this.state.current]}
                           >
                               <Menu.Item key="1"><NavLink exact to='/aboutus'>About us</NavLink></Menu.Item>
